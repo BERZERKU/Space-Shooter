@@ -29,8 +29,7 @@ enemiesRoute(app); //register the route
 app.set('view engine', 'pug');
 
 // serve static files from the `public` folder
-__dirname
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/views/public'));
 
 app.get('/', (req, res) => {
   res.render('index', {
