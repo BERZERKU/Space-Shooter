@@ -25,6 +25,13 @@ enemyRoute(app); //register the route
 var enemiesRoute = require('./routes/enemiesRoutes'); //importing route
 enemiesRoute(app); //register the route
 
+//tell express that we are using pug as our template engine
+app.set('view engine', 'pug');
+
+app.get('/', (req, res) => {
+  res.render('index');
+});
+
 app.listen(port);
 
 console.log('Space shooter API server started on: ' + port);

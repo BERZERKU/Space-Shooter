@@ -1,0 +1,2 @@
+nodemon start
+mongod --dbpath E:\data\db
