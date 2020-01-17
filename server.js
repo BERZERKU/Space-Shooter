@@ -28,10 +28,17 @@ enemiesRoute(app); //register the route
 //tell express that we are using pug as our template engine
 app.set('view engine', 'pug');
 
+// serve static files from the `public` folder
+__dirname
+app.use(express.static(__dirname + '/public'));
+
 app.get('/', (req, res) => {
-  res.render('index');
+  res.render('index', {
+    title: 'Homepage'
+  });
 });
 
 app.listen(port);
+
 
 console.log('Space shooter API server started on: ' + port);

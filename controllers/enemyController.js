@@ -19,7 +19,7 @@ exports.get_all_enemies = function(req, res) {
   enemyModel.find({}, function(err, enemies) {
     if (err) {
       res.send(err);
-      console.log("");
+      console.log("Error from the Database");
     } else {
       res.json(enemies);
     }

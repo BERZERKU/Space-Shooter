@@ -1,2 +1,2 @@
-nodemon start
+nodemon server.js
 mongod --dbpath E:\data\db
