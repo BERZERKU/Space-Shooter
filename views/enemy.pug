@@ -3,9 +3,8 @@ extends default
 block header
 
 block content
-  div.profile
-    div.enemy-image(style=`background: url('/img/enemy.png') top center
-    no-repeat; background-size: cover;`)
+  div.enemy
+    div.enemy-image(style=`background: url('/img/enemy.png') top center no-repeat; background-size: contain;`)
     div.enemy-details
       h1.enemy-name
         | #{enemy.name}

@@ -23,7 +23,6 @@ var enemiesRoute = require("./routes/enemiesRoutes"); //importing route
 enemiesRoute(app); //register the route
 
 var enemy = require("./controllers/enemyController");
-//var enemies = enemy.get_all_enemies;
 
 //tell express that we are using pug as our template engine
 app.set("view engine", "pug");
