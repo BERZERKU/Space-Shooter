@@ -104,7 +104,6 @@ I do this by checking if the screen is bigger then 800px. If yes I apply differe
 
 /* ========= BIG SCREEN ========= */
 @media only screen and (min-width: 1095px) {
-  
   .enemyCard {
     width: 33%;
   }
@@ -112,7 +111,7 @@ I do this by checking if the screen is bigger then 800px. If yes I apply differe
 
 /* Enemy Page
      ========================================================================== */
-@media only screen and (min-width: 800px) {
+
   .enemy {
     display: block;
     height: 100vh;
@@ -120,17 +119,14 @@ I do this by checking if the screen is bigger then 800px. If yes I apply differe
   }
 
   .enemy-image {
-    max-height: 512px;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    height: 60%;
     display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-
   .enemy-details {
+    text-align: center;
     padding: 50px;
     display: block;
     justify-content: center;
@@ -138,8 +134,9 @@ I do this by checking if the screen is bigger then 800px. If yes I apply differe
 
   .enemy-details > * {
     margin-bottom: 20px;
+    display: block;
   }
-}
+
 /* Buttons
      ========================================================================== */
 
