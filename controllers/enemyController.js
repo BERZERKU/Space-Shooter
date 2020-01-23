@@ -26,6 +26,21 @@ exports.get_all_enemies = function(req, res) {
   });
 };
 
+
+exports.get_all_enemies_as_json = function() {
+  enemyModel.find({}, function(err, enemies) {
+    if (err) {
+      console.log("Error from the Database");
+      return null;
+    } else {
+      console.log("######## ENEMIES ########" + enemies);
+      enemyModel.find({}, function(err, enemies){
+        return res.end(JSON.stringify(enemies));
+      })
+    }
+  });
+};
+
 exports.get_by_name = function(req, res) {
   enemyModel.findOne({ name: req.params.name }, function(err, enemy) {
     if (err) {
@@ -73,7 +88,7 @@ exports.delete_by_id = function(req, res) {
   try{
     enemyModel.findByIdAndDelete({_id: req.params.id}, function(err, enemy){
       console.log("Deleted " + enemy);
-      res.send("deleted" + enemy.name)
+      res.send("deleted: " + enemy.name)
     });
     
   }  catch(err){

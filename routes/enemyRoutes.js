@@ -6,7 +6,8 @@ module.exports = function(app) {
 
   //Enemy Routes
 
-  app.route("/enemy").post(auth.authenticate, enemy.spawn);
+  app
+    .route("/enemy").post(auth.authenticate, enemy.spawn);
   app
     .route("/enemy/getByName/:name")
     .get(auth.authenticate, enemy.get_by_name); //found : but didn't work either https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/routes
