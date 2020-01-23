@@ -15,6 +15,7 @@
 
 html {
   box-sizing: border-box;
+  background-color: darkgray;
 }
 
 *,
@@ -46,94 +47,99 @@ body {
   justify-content: center;
   align-items: center;
   height: 80px;
-  background-color: #525286;
-  color: #ffffff;
+  background-color: #800000;
+  color: #000000;
   margin-bottom: 50px;
 }
 
 /* Homepage Container
      ========================================================================== */
-     .enemyCard {
-      text-align: center;
-      height: fit-content;
-      width: 100%;
-      border: 1px solid red;
-      position: relative;
-    }
 
-    .enemyCard > *{
-      display: block;
-    }
-    .enemyCard-image {
-      height: 512px;
-      width: 100%;
-      max-width: 512px;
-      margin: auto;
-      display: inline-block;
-      position: relative;
-    }
+/* Enemy Card
+     ========================================================================== */
+/*If the screen size allows it, enemy cards will be shown in columns of 2. If not under each other. 
+I do this by checking if the screen is bigger then 800px. If yes I apply different css*/
 
-/*if the screen size allows it, enemy cards will be shown in columns. Else under each other*/
-@media only screen and (min-width: 770px) {
+/* ========= SMALL SCREEN ========= */
+.enemyCard {
+  text-align: center;
+  height: fit-content;
+  width: 100%;
+  /*order: 1px solid red;*/
+  position: relative;
+}
+
+.enemyCard > * {
+  display: block;
+}
+
+.enemyCard-image {
+  height: 512px;
+  width: 100%;
+  max-width: 512px;
+  margin: auto;
+  display: inline-block;
+  position: relative;
+}
+/* ========= MEDIUM SCREEN ========= */
+@media only screen and (min-width: 730px) {
   .container {
     height: 100%;
   }
-
-  /* Enemy Card
-     ========================================================================== */
-
   .enemyCard {
-    text-align: center;
     height: 100%;
     width: 50%;
-    border: 1px solid red;
-    position: relative;
     float: left;
+    max-height: fit-content;
   }
   .enemyCard-image {
     max-height: 512px;
-    max-width: 512px;
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    margin: auto;
   }
 }
 
-
-
+/* ========= BIG SCREEN ========= */
+@media only screen and (min-width: 1095px) {
+  
+  .enemyCard {
+    width: 33%;
+  }
+}
 
 /* Enemy Page
      ========================================================================== */
+@media only screen and (min-width: 800px) {
+  .enemy {
+    display: block;
+    height: 100vh;
+    width: 100%;
+  }
 
-.enemy {
-  display: flex;
-  height: 100vh;
-  width: 100%;
+  .enemy-image {
+    max-height: 512px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+  }
+
+
+  .enemy-details {
+    padding: 50px;
+    display: block;
+    justify-content: center;
+  }
+
+  .enemy-details > * {
+    margin-bottom: 20px;
+  }
 }
-
-.enemy-image {
-  height: 100%;
-  flex-grow: 1;
-  flex-basis: 50%;
-  vertical-align: middle;
-}
-
-.enemy-details {
-  flex-basis: 30%;
-  flex-grow: 1;
-  padding: 50px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.enemy-details > * {
-  margin-bottom: 20px;
-}
-
 /* Buttons
      ========================================================================== */
 
